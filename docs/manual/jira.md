@@ -10,7 +10,17 @@ Connect Jira Cloud so each Signalbox ticket can link to a Jira issue. You can im
 
 - Jira Cloud only: a site on `atlassian.net`, such as `acme.atlassian.net`. Jira Server and Data Center aren't supported.
 - The email you sign in to Atlassian with.
-- An Atlassian API token. Create one at **id.atlassian.com → Security → API tokens**.
+- An Atlassian API token. Create one at **id.atlassian.com → Security → API tokens → Create API token**.
+
+The token has no Jira scopes of its own: it acts as you, with your Jira project permissions. Signalbox never checks them; Jira does. The form lists what each feature needs:
+
+| Jira permission | Used for |
+|---|---|
+| **Browse Projects** | Listing projects, searching and importing issues. |
+| **Create Issues** | **Create issue** and **Send to tracker**. |
+| **Edit Issues** | A QA note in the description. |
+| **Transition Issues** | Moving issues as branches merge. |
+| **Add Comments** | Comments and QA notes as comments. |
 
 ## Add the connection
 

@@ -2,6 +2,22 @@
 
 Every Signalbox release, newest first. Also on [the website](https://signalbox.accessa.co.ke/changelog/). Installed copies update themselves.
 
+## 0.2.2 (2026-11-23)
+
+- QA note: post it as a comment or put it in the task's description (add below, or replace).
+- Settings: each tracker and code host lists the token scopes it needs, with copy buttons.
+- Kanboard: paste any board link and Signalbox keeps just the site address.
+- New ticket: tracker numbers like #42 become the ticket key; a checkout with uncommitted changes now says why no branch can be made and offers a new worktree.
+- Pull requests keep working on slow connections to Bitbucket, and keep showing the last result if a refresh fails.
+- Session tabs: Open ticket button, and the ticket title on hover.
+- Crews with three or more workers each get their own pane.
+- Files: new file, new folder, rename and delete.
+- Worktrees that share a repo with a known checkout are recognised everywhere.
+- Mobile: pick a phone, emulator or simulator for Run; Xcode as an editor on macOS.
+- Fixes: matching loose-ends counts; the checkout menu always shows its tickets.
+
+Downloads: [macOS .dmg](https://signalbox.accessa.co.ke/updates/0.2.2/Signalbox_0.2.2_universal.dmg) · [Linux AppImage](https://signalbox.accessa.co.ke/updates/0.2.2/Signalbox_0.2.2_amd64.AppImage) · [Linux .deb](https://signalbox.accessa.co.ke/updates/0.2.2/Signalbox_0.2.2_amd64.deb)
+
 ## 0.2.1 (2026-11-23)
 
 - Create PR fills in the title and description from the branch's latest commit.

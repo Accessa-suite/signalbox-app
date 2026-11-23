@@ -4,7 +4,7 @@ Signalbox is a desktop app for macOS and Linux that keeps your tickets, git bran
 
 ![The Signalbox board: loose ends grouped as held at develop or staging and pushed but not merged, each ticket with its branch's lamps on the track, and agent sessions running in the sidebar](docs/images/board.png)
 
-**[Download Signalbox 0.2.1](https://signalbox.accessa.co.ke/download/)** for macOS or Linux · [Website](https://signalbox.accessa.co.ke/) · [Guides](https://signalbox.accessa.co.ke/guides/) · [Changelog](CHANGELOG.md) · [Releases](https://github.com/Accessa-suite/signalbox-app/releases)
+**[Download Signalbox 0.2.2](https://signalbox.accessa.co.ke/download/)** for macOS or Linux · [Website](https://signalbox.accessa.co.ke/) · [Guides](https://signalbox.accessa.co.ke/guides/) · [Changelog](CHANGELOG.md) · [Releases](https://github.com/Accessa-suite/signalbox-app/releases)
 
 This repository holds Signalbox's releases, documentation and issue tracker. The source code isn't published here.
 
@@ -27,7 +27,7 @@ This repository holds Signalbox's releases, documentation and issue tracker. The
 
 ## Download and install
 
-The current version is **0.2.1**, released 23 November 2026. Download it from **[signalbox.accessa.co.ke/download](https://signalbox.accessa.co.ke/download/)**, where the files' SHA-256 checksums are listed, or from [GitHub Releases](https://github.com/Accessa-suite/signalbox-app/releases).
+The current version is **0.2.2**, released 23 November 2026. Download it from **[signalbox.accessa.co.ke/download](https://signalbox.accessa.co.ke/download/)**, where the files' SHA-256 checksums are listed, or from [GitHub Releases](https://github.com/Accessa-suite/signalbox-app/releases).
 
 Signalbox runs the coding agents you already use. Install at least one and log in to it: Claude Code (`claude`), Codex (`codex`), Gemini CLI (`gemini`) or opencode (`opencode`). You'll also want `git`, and `gh` if you use GitHub.
 

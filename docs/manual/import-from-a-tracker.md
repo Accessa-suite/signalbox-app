@@ -27,7 +27,7 @@ What the ticket gets:
 
 | From the issue | On the ticket |
 |---|---|
-| Key, such as `DUKA-155` | The ticket's key, when it looks like `ABC-123` and no ticket in Signalbox has it yet. Otherwise the ticket gets the project's next number. |
+| Key, such as `DUKA-155` | The ticket's key, when it looks like `ABC-123` and no ticket in Signalbox has it yet. A number-only key such as Kanboard's `#42` becomes your project's prefix and that number, such as `DUKA-42`. If the key is taken, or isn't either shape, the ticket gets the project's next number. |
 | Title | The title. You can edit it before creating. |
 | Description and link | The ticket's notes. |
 | The issue itself | A link. It shows under **Linked issue** in the drawer. |
@@ -36,7 +36,7 @@ With the default branch pattern, an imported key also goes into the branch name,
 
 Changed your mind? **Don't link** next to **Imported from** drops the issue but keeps the title.
 
-> **Note:** Issue keys that don't look like `ABC-123`, such as Kanboard's `#42`, don't become the ticket key. The ticket gets the project's next number and is still linked to the issue.
+> **Note:** Kanboard tasks and Notion pages without an ID prefix have number-only keys such as `#42`. The ticket key becomes your project's prefix and that number, such as `DUKA-42`, when it's free. The key in the form's heading shows what the ticket will get.
 
 ## Link an existing ticket to an issue
 

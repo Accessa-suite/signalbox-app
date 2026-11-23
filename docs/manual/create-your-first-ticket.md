@@ -34,7 +34,7 @@ Any of these opens **New ticket**:
 | **New ticket** on the **Tickets** view | The same. |
 | A checkout in the rail → **New ticket + branch from main** | The project, and that checkout as the place for the branch. |
 | A checkout in the rail → **New ticket for** `branch` | The project, a title from the branch name, and the existing branch to link. Shown when the checkout is on a branch no ticket owns. |
-| **Loose ends → Unclaimed branches → Ticket** | A title from the branch name, and the branch to link. |
+| **Loose ends → Unclaimed branches → Ticket** | A title from the branch name, the branch to link, and the key in the branch name (such as `DUKA-12` in `feature/DUKA-12-…`) as the ticket key when it's free. |
 | **Sidings → Attach → + New ticket from this session** | A title from the session, its branch, and the session to attach. |
 | **Drafts → Start** | The draft's text as the title and its notes. The draft is removed once the ticket exists. |
 
@@ -56,7 +56,7 @@ Shown when the project is linked to a tracker (Jira, Kanboard, Notion or a Board
 
 The title becomes the issue's title. When you create the ticket:
 
-- it takes the issue's key, such as `DUKA-155`, if that key is free in Signalbox; otherwise it gets the project's next number;
+- it takes the issue's key, such as `DUKA-155`, if that key is free in Signalbox. A number-only key, such as Kanboard's `#42`, becomes your project's prefix and that number (`DUKA-42`). Otherwise it gets the project's next number;
 - the issue's description and link go into the ticket's notes;
 - the ticket is linked to the issue, so it can move the issue along as the branch progresses.
 
@@ -80,7 +80,7 @@ The branch is always created from `origin/<prod>`, fetched fresh at that moment.
 
 | Choice | What happens |
 |---|---|
-| **Main Checkout** | The checkout you pick switches to the new branch. It must have no uncommitted changes; a checkout with changes is greyed out and shows **N uncommitted**. |
+| **Main Checkout** | The checkout you pick switches to the new branch. It must have no uncommitted changes; a checkout with changes is greyed out and shows **N uncommitted**. If every checkout of a repo has changes, the form says so ("… has uncommitted changes, so no branch can be created there. Pick New Worktree or commit first.") and **Switch to New Worktree** switches for you. |
 | **New Worktree** | A new folder is made for the branch at `<checkout>/.claude/worktrees/<name>`, where the name is the last part of the branch name (after the last `/`). The checkout itself stays as it is, changes and all. If the project has a worktree setup, it runs in a **Setup** tab to copy `.env` files and install dependencies. |
 
 Use a worktree when the checkout is busy with other work, or when you want several agents in the same repo at once.
@@ -115,6 +115,7 @@ The button says what will happen:
 | Button | When |
 |---|---|
 | **Create ticket** | No branch, or no agent to start. |
+| **Create ticket without a branch** | **Create a branch** is ticked, but there's no checkout to create it in (every checkout has uncommitted changes in Main Checkout). |
 | **Create & start Claude Code** (or Codex, …) | One agent will start. |
 | **Create & start Claude Code crew** | A crew where every member runs the same agent. |
 | **Create & start mixed crew** | A crew with different agents. |

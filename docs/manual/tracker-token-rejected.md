@@ -15,7 +15,7 @@ When a tracker refuses Signalbox's sign-in, the connection's **Test**, tracker s
 5. Click **Test**. A working connection shows who you're signed in as.
 6. Click **Save**.
 
-Any valid token works. Signalbox doesn't ask for particular scopes; the tracker decides what the token may do, and Signalbox shows its answer.
+Any valid token works. Signalbox doesn't check scopes; the tracker decides what the token may do, and Signalbox shows its answer. The connection form lists what each tracker's token needs under the token field: Jira's project permissions, Notion's integration capabilities, and for Kanboard nothing (a personal API token has no scopes).
 
 > **Note:** Tokens are kept in your system keychain. If the message starts with `keychain:`, the keychain itself refused. Make sure it isn't locked, and on macOS choose **Always Allow** when asked. On Linux, a Secret Service such as GNOME Keyring must be running.
 
@@ -35,6 +35,7 @@ The **Base URL** is your Jira Cloud site's full HTTPS address, such as the one f
 |---|---|
 | `Kanboard rejected the username or API token (HTTP 401)` | Check **Username** is your Kanboard login, and **Personal API token** comes from **My profile → API** in Kanboard. |
 | `Kanboard doesn't allow <method> for this user (HTTP 403)` | Your Kanboard user can't do that in this project. Ask a Kanboard admin to add you to the project with enough rights. |
+| `This doesn't look like Kanboard's address. Use just the site address, e.g. …` | There's no Kanboard API at that address (HTTP 404). Use just the site address, such as the one for `kanban.example.com`. A pasted board link is cut down to it for you. |
 | `… didn't answer like Kanboard; check the URL` | The **Base URL** isn't a Kanboard server. Use the address you open Kanboard at. |
 
 See [Kanboard](kanboard.md).
@@ -45,7 +46,7 @@ See [Kanboard](kanboard.md).
 |---|---|
 | `Notion rejected the integration secret (HTTP 401)` | Copy the **Integration secret** again from your internal integration at notion.so/profile/integrations. |
 | `Notion can't see it: share the database with the integration in Notion (••• → Connections)` | Open the database in Notion, click **•••** → **Connections**, and add your integration. |
-| `the Notion integration isn't allowed to do this; check its capabilities (HTTP 403…)` | In the integration's settings in Notion, turn on the capability for what failed: reading, updating or inserting content, reading or inserting comments, or reading user information (needed for **Your Notion user**). |
+| `the Notion integration isn't allowed to do this; check its capabilities (HTTP 403…)` | In the integration's settings in Notion, turn on the capability for what failed: **Read content**, **Update content**, **Insert content**, **Insert comments**, or **Read user information including email addresses** (needed for **Your Notion user**). See [Notion](notion.md) for what each one is used for. |
 
 See [Notion](notion.md).
 
@@ -69,7 +70,7 @@ See [Board API](board-api.md).
 
 ## Code host tokens
 
-Bitbucket and GitHub tokens are set up under **Projects & settings → Code hosts**. Bitbucket has one rule of its own: it refuses Atlassian API tokens that have no Bitbucket scope at all. See [Code hosts](code-hosts.md).
+Bitbucket and GitHub tokens are set up under **Projects & settings → Code hosts**, where the form lists the scopes each token needs. Bitbucket has one rule of its own: it refuses Atlassian API tokens that have no Bitbucket scopes, so make the token with **Create API token with scopes → Bitbucket** and tick at least `read:pullrequest:bitbucket` (plus `write:pullrequest:bitbucket` for Create PR). See [Code hosts](code-hosts.md).
 
 ## Related
 

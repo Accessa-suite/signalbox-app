@@ -9,9 +9,19 @@ Connect a Notion database so its pages act as issues for your tickets. You can i
 ## Before you start
 
 1. Go to **notion.so/profile/integrations** and create an internal integration for your workspace.
-2. Give it these capabilities: read content, update content, insert content, read comments, insert comments, and **Read user information**. The last one lets you pick yourself in Signalbox.
+2. Under **Capabilities**, turn on the ones in the table below. The form lists them under the secret field too.
 3. Copy the integration secret.
 4. Open the database you use for tasks in Notion. Click **•••** → **Connections** and add your integration. Signalbox only sees databases shared this way.
+
+| Capability | Used for |
+|---|---|
+| **Read content** | Listing databases, searching and importing pages, reading statuses. |
+| **Update content** | Moving a page's status; **Replace** for a QA note. |
+| **Insert content** | **Create issue**, **Send to tracker**, and **Add below** for a QA note. |
+| **Insert comments** | Comments and QA notes as comments. |
+| **Read user information including email addresses** | Picking yourself under **Your Notion user**. |
+
+**Read comments** isn't needed: Signalbox only adds comments.
 
 ## Add the connection
 
@@ -43,7 +53,7 @@ If you skip step 6, the connection shows **no Notion user picked**, and "Mine" s
 
 | Feature | Works | Notes |
 |---|---|---|
-| Import a page when you create a ticket | Yes | A key like `TASK-12` becomes the ticket key when it's free. |
+| Import a page when you create a ticket | Yes | A key like `TASK-12` becomes the ticket key when it's free. A unique ID with no prefix, such as `#12`, becomes your project's prefix and that number, such as `DUKA-12`. |
 | Link an existing page | Yes | Search by words, or paste a page link or id. |
 | Create a page from a ticket | Yes | **Linked issue → Create issue**. |
 | Send a draft to Notion | Yes | **Send to tracker** on a draft. |

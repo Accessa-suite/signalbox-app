@@ -60,7 +60,7 @@ On Bitbucket, the repo's default reviewers (from the repository and project sett
 ## If it fails
 
 - "No code host connection for …": add one in **Projects & settings → Code hosts**.
-- "… didn't let this token open a pull request (HTTP 403)": the token can read but not write. On Bitbucket, a scoped Atlassian token needs `write:pullrequest:bitbucket`; an access token needs **Pull requests: Write**. On GitHub, a fine-grained token needs **Pull requests: Read and write**, a classic token needs `repo`, and with **Use my gh login** run `gh auth refresh -s repo`.
+- "… didn't let this token open a pull request (HTTP 403)": the token can read but not write. On Bitbucket, your Atlassian API token needs `write:pullrequest:bitbucket`; an access token needs **Pull requests: Write**. On GitHub, a fine-grained token needs **Pull requests: Read and write**, a classic token needs `repo`, and with **Use my gh login** run `gh auth refresh -s repo`.
 
 ## Related
 

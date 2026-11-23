@@ -33,7 +33,7 @@ Signalbox reads your checkouts every time the board reloads, and fetches every r
 
 ## Loose ends
 
-**Loose ends** is the board you start on. The big number counts work that isn't finished: tickets not in prod, branches with no ticket, and checkouts with uncommitted changes. Each group below it only appears when it has something in it.
+**Loose ends** is the board you start on. The big number counts work that isn't finished: tickets not in prod (backlog tickets with no branch aside) and branches with no ticket. The **Loose ends** count in the rail is the same number. Checkouts with uncommitted changes and shipped tickets are listed below it but not counted. Each group below it only appears when it has something in it.
 
 ![Loose ends, with tickets held at develop and staging](images/loose-ends.png)
 

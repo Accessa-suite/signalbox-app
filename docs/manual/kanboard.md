@@ -10,7 +10,7 @@ Connect Kanboard so each Signalbox ticket can link to a Kanboard task. You can i
 
 You need three things from Kanboard:
 
-- The full HTTPS address of your Kanboard, as your browser shows it, for example for `kanboard.example.com`. The address ending in `/jsonrpc.php` works too.
+- The HTTPS address of your Kanboard site, for example for `kanban.example.com`, or `example.com/kanboard` if Kanboard is installed in a folder. You can paste a board or task link, or the address ending in `/jsonrpc.php`: Signalbox cuts it down to the site address and shows that in the field.
 - Your Kanboard username (the login you sign in with).
 - A personal API token. In Kanboard, open **My profile → API** and copy the token.
 
@@ -60,7 +60,7 @@ The search box in **Import from tracker** and **Link existing…** takes words, 
 
 With **Mine** ticked, Signalbox adds `assignee:me` and `status:open`. With **Mine** off and an empty box, it lists open tasks. Results are newest first, up to 100.
 
-> **Note:** Kanboard tasks only have numbers, not keys. A ticket you create from a task gets your project's next key, such as `DUKA-12`.
+> **Note:** Kanboard tasks only have numbers, not keys. A ticket you create from task `#42` gets your project's prefix and the task number, such as `DUKA-42`. If that key is already taken, it gets the project's next key instead.
 
 ## QA columns are left alone
 
@@ -72,6 +72,7 @@ A passed verdict such as **QA PASSED** isn't held. It still moves on to your don
 
 - **the token was rejected:** check the username and token. The token belongs to the username you entered.
 - **not allowed with this token:** Kanboard refused the action. You may not be allowed to edit tasks in that project.
+- **This doesn't look like Kanboard's address:** Kanboard's API wasn't found at that address (HTTP 404). Use just the site address, such as the one for `kanban.example.com`, without any folder that isn't part of your Kanboard install.
 - Links in tasks point to `localhost`: Signalbox builds task links from your base URL, so they open the right address even when Kanboard's own URL setting is wrong.
 
 ## Related
