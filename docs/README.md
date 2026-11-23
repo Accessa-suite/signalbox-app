@@ -1,5 +1,6 @@
 # Signalbox docs
 
+- [The manual](manual/README.md): installing, tickets, agents, trackers and troubleshooting, page by page
 - [Install on macOS](install-macos.md): opening the app the first time
 - [How to run several Claude Code sessions without losing track](multiple-claude-code-sessions.md): File every Claude Code session under the ticket it's for, see which one is waiting for you, and resume the right one tomorrow. With plain terminals and with Signalbox.
 - [Run Claude Code and Codex together as one crew](claude-code-and-codex-crew.md): Put Claude Code and Codex on the same ticket across several repos: one orchestrator, one worker per repo, messages passed between them through a local MCP server.
