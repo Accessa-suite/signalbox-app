@@ -1,0 +1,70 @@
+name: Bug report
+description: Something in Signalbox doesn't work as it should.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting this. Please leave out tokens, passwords and private code.
+  - type: input
+    id: version
+    attributes:
+      label: Signalbox version
+      description: Settings → About shows it.
+      placeholder: "0.2.1"
+    validations:
+      required: true
+  - type: dropdown
+    id: install
+    attributes:
+      label: How you installed it
+      options:
+        - macOS .dmg
+        - Linux AppImage
+        - Linux .deb
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system and version
+      placeholder: "macOS 15.1 on Apple silicon / Ubuntu 24.04 / Fedora 41"
+    validations:
+      required: true
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Agent involved, if any
+      multiple: true
+      options:
+        - Claude Code
+        - Codex
+        - Gemini CLI
+        - opencode
+        - None / not related to an agent
+  - type: input
+    id: agent-version
+    attributes:
+      label: Agent CLI version
+      description: For example the output of `claude --version` or `codex --version`.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open a ticket
+        2. Click …
+        3. …
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error messages or logs
+      description: Copy the text of any error message.
+      render: text

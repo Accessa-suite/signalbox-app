@@ -1,0 +1,36 @@
+name: Feature request
+description: Suggest a change or something new.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: The problem or the workflow, in your own words. This matters more than the solution.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would help
+      description: How you'd like Signalbox to handle it, if you have an idea.
+  - type: textarea
+    id: now
+    attributes:
+      label: How you do it today
+      description: Workarounds, other tools, or "I don't".
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Sessions and agents
+        - Crews
+        - Board and tickets
+        - Worktrees, setup and run
+        - Trackers (Jira, Kanboard, Notion, Board API)
+        - Pull requests
+        - Write… (summaries, QA notes, release notes)
+        - Time and cost
+        - Install and updates
+        - Something else
