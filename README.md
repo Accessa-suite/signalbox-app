@@ -70,7 +70,7 @@ Signalbox checks for a new version when it starts and every 6 hours, and asks be
 
 ### Is it free?
 
-Yes, for now. There's no account, no trial and no card to enter. Download it and use it.
+Yes. There's no account, no trial and no card to enter. Download it and use it.
 
 ### Does Signalbox send my code anywhere?
 
@@ -108,7 +108,7 @@ Signalbox talks to the trackers and code hosts you connect, and checks signalbox
 
 ## Price
 
-Free for now. No account, no trial, no card.
+Free. No account, no trial, no card.
 
 ## Reporting bugs and asking for features
 

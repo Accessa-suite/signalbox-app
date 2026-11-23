@@ -82,7 +82,7 @@ Signalbox sets no limit. The practical limits are your machine, your plan with t
 
 ### Is it free?
 
-Yes, for now, with no account. Your agent usage is billed by its provider as it is in a terminal.
+Yes, with no account. Your agent usage is billed by its provider as it is in a terminal.
 
 ---
 
