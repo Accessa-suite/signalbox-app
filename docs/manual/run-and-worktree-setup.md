@@ -2,7 +2,7 @@
 
 > Make new worktrees ready to use (.env, dependencies, setup commands), and run each checkout's dev servers on its own ports, or on a phone or emulator.
 
-Section: Work on code · Updated: 2026-11-23
+Section: Work on code · Updated: 2026-11-24
 
 A fresh worktree has your code but not your `.env` or installed dependencies, and two checkouts can't both run a dev server on the same port. Setup & run fixes both: a recipe that prepares each new worktree, and a **Run** button that starts the dev servers on free ports.
 
@@ -17,7 +17,7 @@ Either:
 
 ![The Setup & run settings for one repo: copy, dependencies, setup commands and run processes](images/setup-run.png)
 
-When a repo has nothing saved yet, Signalbox reads its main checkout and pre-fills what it recognises, such as Laravel, PHP, Vite or Next.js. Those repos show **pre-filled, not saved yet**. **Use detected** replaces a repo's settings with what was detected. Nothing is used until you click **Save**.
+When a repo has nothing saved yet, Signalbox reads its main checkout and pre-fills what it recognises, such as Laravel, PHP, Vite or Next.js. For a PHP project it sets `vendor` to **Copy**, and for a Node project it sets `node_modules` to **Link**. Those repos show **pre-filled, not saved yet**. **Use detected** replaces a repo's settings with what was detected. Nothing is used until you click **Save**.
 
 ## New worktree setup
 
@@ -26,23 +26,40 @@ This recipe runs every time Signalbox creates a worktree: from the **New ticket*
 Fill in, for each repo:
 
 1. **Copy into each new worktree:** one path per line, such as `.env`. Missing files are skipped.
-2. **Dependencies:** click **Add folder** for each one, type the folder (such as `node_modules`) and choose **Link** or **Install**. **Link** makes a symlink to the main checkout's copy: quick, and the two share it. **Install** runs a command instead, such as `npm ci` or `composer install`; it's skipped if the folder is already in the worktree.
+2. **Dependencies:** click **Add folder** for each one, type the folder (such as `node_modules`) and choose how it gets into the worktree:
+   - **Link** makes a symlink to the main checkout's folder. It's instant, and the two share it.
+   - **Copy** copies the main checkout's folder into the worktree. It's quick and needs no network, and the worktree gets its own copy. On disks that support it (APFS on macOS, Btrfs or XFS on Linux) the copy takes almost no extra space until files change.
+   - **Install** runs a command instead, such as `npm ci` or `composer install`.
+   - **Ask** asks you each time a worktree is made. See [Choose when the worktree is made](#choose-when-the-worktree-is-made).
+
+   Link, Copy and Install are skipped if the folder is already in the worktree.
 3. **Then run, in order, in the worktree:** one command per line, such as `php artisan key:generate`.
 4. Click **Save**.
 
-> **Warning:** Don't link `vendor` in a PHP project. PHP resolves symlinks, so the autoloader would load the main checkout's classes, not the worktree's. Signalbox flags this with **linked vendor autoloads main's code** and suggests `composer install` instead.
+> **Warning:** Don't link `vendor` in a PHP project. PHP resolves symlinks, so the autoloader would load the main checkout's classes, not the worktree's. Signalbox flags this with **linked vendor autoloads main's code**. Use **Copy** instead: a copied `vendor` loads the worktree's code, and it's much faster than `composer install`. Choose **Install** when the worktree's branch changes `composer.json` or `composer.lock`.
+
+### Choose when the worktree is made
+
+With a folder set to **Ask**, Signalbox asks before the setup runs. A small window lists each folder with **Link**, **Copy** and **Install**:
+
+1. Pick one for each folder. The one picked first is your last choice for that folder, or else what Signalbox would pick for it.
+2. To stop being asked, tick **Remember for this repo**. The folder is then set to your choice in the repo's settings. You can set it back to **Ask** in Setup & run.
+3. Click **Run setup**. Or click **Skip setup** to make the worktree without it; you can run it later.
+
+If Signalbox has no window open to ask in, each folder gets the choice that would have been picked first, and the Setup tab says so.
 
 ### What happens when a worktree is made
 
-1. Signalbox copies and links the files.
-2. It opens a **Setup** tab and runs the commands there, so you can watch. A message says "Setting up …: see its Setup tab".
-3. Each step shows ✓ or ✗. It ends with "✓ worktree ready", or stops at the first failing command.
+1. If a folder is set to **Ask**, Signalbox asks first.
+2. It copies and links the files.
+3. It opens a **Setup** tab and runs the commands there, so you can watch. A message says "Setting up …: see its Setup tab".
+4. Each step shows ✓ or ✗. It ends with "✓ worktree ready", or stops at the first failing command.
 
 Nothing is undone when a step fails. Fix the problem in the Setup tab's folder, then run the setup again.
 
 ### Run setup again
 
-In the rail, click the worktree under **Checkouts**, then **Run worktree setup**. It isn't offered for the main checkout.
+In the rail, click the worktree under **Checkouts**, then **Run worktree setup**. It isn't offered for the main checkout. Folders set to **Ask** are asked about here too.
 
 ## Run dev servers
 

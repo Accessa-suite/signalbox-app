@@ -2,6 +2,13 @@
 
 Every Signalbox release, newest first. Also on [the website](https://signalbox.accessa.co.ke/changelog/). Installed copies update themselves.
 
+## 0.2.3 (2026-11-24)
+
+- Worktree setup: each dependency folder can be linked, copied or installed, or Signalbox can ask you each time a worktree is made.
+- PHP vendor folders are copied by default, so the worktree runs its own code.
+
+Downloads: [macOS .dmg](https://signalbox.accessa.co.ke/updates/0.2.3/Signalbox_0.2.3_universal.dmg) · [Linux AppImage](https://signalbox.accessa.co.ke/updates/0.2.3/Signalbox_0.2.3_amd64.AppImage) · [Linux .deb](https://signalbox.accessa.co.ke/updates/0.2.3/Signalbox_0.2.3_amd64.deb)
+
 ## 0.2.2 (2026-11-23)
 
 - QA note: post it as a comment or put it in the task's description (add below, or replace).
