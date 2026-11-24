@@ -30,6 +30,7 @@
 - [Files](files.md): Browse every file in a checkout, find one by name, and create, rename or delete files and folders without leaving Signalbox.
 - [Run and worktree setup](run-and-worktree-setup.md): Make new worktrees ready to use (.env, dependencies, setup commands), and run each checkout's dev servers on its own ports, or on a phone or emulator.
 - [Open in editor](open-in-editor.md): Choose the editor Signalbox opens files in: VS Code, Cursor, Zed, Android Studio, any JetBrains IDE, Xcode on a Mac, or your own command.
+- [Database](database.md): Browse, filter and edit your project's local MySQL, MariaDB, Postgres or SQLite database, and run SQL, in a Data tab next to your sessions.
 
 ## Trackers & code hosts
 

@@ -2,6 +2,14 @@
 
 Every Signalbox release, newest first. Also on [the website](https://signalbox.accessa.co.ke/changelog/). Installed copies update themselves.
 
+## 0.2.4 (2026-11-24)
+
+- New Database tab: open a project's local database from the checkout menu or the command palette. It connects using the project's .env, or settings you choose.
+- Browse tables, sort and filter them, run SQL with autocomplete, and edit cells. Save applies all your edits at once.
+- Works with MySQL/MariaDB, Postgres and SQLite, on databases on this computer.
+
+Downloads: [macOS .dmg](https://signalbox.accessa.co.ke/updates/0.2.4/Signalbox_0.2.4_universal.dmg) · [Linux AppImage](https://signalbox.accessa.co.ke/updates/0.2.4/Signalbox_0.2.4_amd64.AppImage) · [Linux .deb](https://signalbox.accessa.co.ke/updates/0.2.4/Signalbox_0.2.4_amd64.deb)
+
 ## 0.2.3 (2026-11-24)
 
 - Worktree setup: each dependency folder can be linked, copied or installed, or Signalbox can ask you each time a worktree is made.

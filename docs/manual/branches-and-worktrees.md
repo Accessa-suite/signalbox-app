@@ -2,7 +2,7 @@
 
 > Create and link a ticket's branches, work in git worktrees, move a branch into a worktree and promote it back, and set the branch name pattern.
 
-Section: Tickets & branches · Updated: 2026-11-23
+Section: Tickets & branches · Updated: 2026-11-24
 
 A ticket's branches are how Signalbox knows where its work is. A branch can live in a repo's main checkout or in its own git worktree. This page covers creating, linking and moving branches, and naming them.
 
@@ -81,7 +81,7 @@ The main checkout must have no uncommitted changes first. If the carried changes
 
 Click any checkout or worktree in the rail for its menu:
 
-![The checkout menu for duka-mobile: start a session on a ticket, new ticket, run, setup, changes and shell](images/checkout-menu.png)
+![The checkout menu for duka-mobile: start a session on a ticket, new ticket, run, setup, database, changes and shell](images/checkout-menu.png)
 
 | Item | What it does |
 |---|---|
@@ -92,6 +92,7 @@ Click any checkout or worktree in the rail for its menu:
 | **Run dev servers** / **Stop** | See [Run & worktree setup](run-and-worktree-setup.md). |
 | **Run worktree setup** | Worktrees only. Runs the setup recipe again. |
 | **Setup & run…** | Edit the project's worktree setup and run commands. |
+| **Database** | The project's local database in a Data tab. See [Database](database.md). |
 | **Changes & files** | The diff and file browser for this folder. See [Changes](changes.md). |
 | **Plain shell** | A terminal in this folder. |
 
